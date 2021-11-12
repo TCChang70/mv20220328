@@ -25,4 +25,10 @@ public class ProductJSONController {
 	    Product[ ] list = new Gson().fromJson(jsonParam, Product[ ].class);
 	    return list;
 	}
+	@RequestMapping(value = "order", method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public Product[ ] orders(@RequestBody JsonArray jsonParam) {
+	    Product[ ] list = new Gson().fromJson(jsonParam, Product[ ].class);
+	    return list;
+	}
 }
