@@ -21,8 +21,8 @@ public class ProductJSONController {
 	}
 	@RequestMapping(value = "pts", method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public Product[ ] products(@RequestBody JsonArray jsonParam) {
-	    Product[ ] list = new Gson().fromJson(jsonParam, Product[ ].class);
+	public List<Product> products(@RequestBody JsonArray jsonParam) {
+	    List<Product> list = new Gson().fromJson(jsonParam, ArrayList.class);
 	    return list;
 	}
 }
